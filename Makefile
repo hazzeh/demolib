@@ -1,1 +1,2 @@
-include bob/Makefile
+BOBHOME:=./bob
+include $(BOBHOME)/Makefile
