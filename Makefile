@@ -1,2 +1,2 @@
-BOBHOME:=./bob
+BOBHOME := ./bob
 include $(BOBHOME)/Makefile
