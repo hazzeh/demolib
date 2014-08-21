@@ -6,6 +6,8 @@ NAME    := demolib
 VERSION := 1.0.0
 RELEASE := 1
 
+_CXXFLAGS := -std=c++11
+
 TARGETS := libdemo.so
 
 libdemo.so_SRCS := src/demolib.cpp
