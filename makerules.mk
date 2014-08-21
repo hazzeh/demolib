@@ -12,4 +12,6 @@ _CXXFLAGS += -std=c++11
 
 libdemo.so_SRCS := src/demolib.cpp
 
+SUBMODULES := gtest
+
 include $(FOOTER)
