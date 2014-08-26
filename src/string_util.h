@@ -5,6 +5,9 @@
 #include <map>
 #include <string>
 
+
+#include <cstring>
+
 void
 str_remove(std::string* str, std::string const& arg) {
   str->erase(
@@ -24,4 +27,12 @@ str_replace(std::string* str, std::string const& arg1, char arg2) {
         return std::find(arg1.begin(), arg1.end(), x) != arg1.end();
       },
       arg2);
+}
+
+char*
+str_alloc(std::string const& arg) {
+  auto cstr = new char[arg.length() + 1];
+  memcpy(cstr, arg.c_str(), arg.length());
+  cstr[arg.length()] = '\0';
+  return cstr;
 }
