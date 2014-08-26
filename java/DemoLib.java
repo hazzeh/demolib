@@ -6,10 +6,13 @@ public class DemoLib {
 
   public static void main(String[] args) {
     DemoLib dlib = new DemoLib();
-    System.out.printf("Distance: %16d\n", dlib.getToken(10));
+    System.out.printf("Token: %8d\n", dlib.getToken(1));
+    System.out.printf("Token: %8d\n", dlib.getToken(10));
+    System.out.printf("Token: %8d\n", dlib.getToken(20));
+    System.out.printf("Token: %8d\n", dlib.getToken(55));
   }
 
   static {
-    System.loadLibrary("jdemolib");
+    System.loadLibrary("demo");
   }
 }
