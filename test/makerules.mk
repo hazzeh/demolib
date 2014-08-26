@@ -4,6 +4,7 @@ include $(HEADER)
 
 TARGETS := test.mod.demolib
 
+_CXXFLAGS := -std=c++11 -pedantic
 _LIBS := -Wl,-rpath="\$$$$ORIGIN" -Wl,-z,origin
 
 test.mod.demolib_SRCS := test.mod.demolib.cpp

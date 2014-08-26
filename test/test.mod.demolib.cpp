@@ -57,6 +57,20 @@ TEST_F(Test, Quoted) {
 }
 
 
+TEST_F(Test, Repetition) {
+  auto msg1 = getMessage(10);
+  auto msg2 = getMessage(10);
+  auto msg3 = getMessage(99);
+  auto msg4 = getMessage(99);
+
+  EXPECT_EQ(msg1, msg2)
+      << "Consecutive for the same message should return equal messages";
+
+  EXPECT_EQ(msg3, msg4)
+      << "Consecutive for the same message should return equal messages";
+}
+
+
 } //  namespace end
 
 
