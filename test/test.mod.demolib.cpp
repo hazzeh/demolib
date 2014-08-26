@@ -52,6 +52,7 @@ TEST_F(Test, DefaultReturn) {
 
 
 TEST_F(Test, Quoted) {
+  //EXPECT_STREQ("do_or_do_not_there_is_no_try", getMessageQuoted(10));
   EXPECT_STREQ("judge_me_by_my_size_do_you" , getMessageQuoted(20));
   EXPECT_STREQ("that_is_why_you_fail"       , getMessageQuoted(51));
 }
