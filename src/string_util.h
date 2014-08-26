@@ -6,7 +6,7 @@
 #include <string>
 
 void
-str_remove(std::string* str, std::string arg) {
+str_remove(std::string* str, std::string const& arg) {
   str->erase(
       std::remove_if(
           str->begin(), str->end(),
@@ -17,7 +17,7 @@ str_remove(std::string* str, std::string arg) {
 }
 
 void
-str_replace(std::string* str, std::string arg1, char arg2) {
+str_replace(std::string* str, std::string const& arg1, char arg2) {
   std::replace_if(
       str->begin(), str->end(),
       [arg1](char x) {
