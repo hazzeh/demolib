@@ -27,6 +27,9 @@ ifdef __bobBUILDSTAGE
 jni: $(OBJDIR)
 	javac -d $(OBJDIR) java/DemoLib.java
 	javah -d src -classpath $(OBJDIR) DemoLib
+
+jni-test: jni libdemo.so
+	java -cp $(OBJDIR) -Djava.library.path=$(TGTDIR) DemoLib
 endif
 
 include $(FOOTER)
