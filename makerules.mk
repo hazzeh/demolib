@@ -29,7 +29,7 @@ jni: $(OBJDIR)
 	javah -d src -classpath $(OBJDIR) demolib.DemoLib
 
 jni-test: jni libdemo.so
-	java -cp $(OBJDIR) -Djava.library.path=$(TGTDIR) DemoLib
+	java -cp $(OBJDIR) -Djava.library.path=$(TGTDIR) demolib.DemoLib
 endif
 
 include $(FOOTER)
