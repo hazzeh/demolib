@@ -25,8 +25,8 @@ libdemo.so_USES := java
 
 ifdef __bobBUILDSTAGE
 jni: $(OBJDIR)
-	javac -d $(OBJDIR) java/DemoLib.java
-	javah -d src -classpath $(OBJDIR) DemoLib
+	javac -d $(OBJDIR) java/demolib/DemoLib.java
+	javah -d src -classpath $(OBJDIR) demolib.DemoLib
 
 jni-test: jni libdemo.so
 	java -cp $(OBJDIR) -Djava.library.path=$(TGTDIR) DemoLib

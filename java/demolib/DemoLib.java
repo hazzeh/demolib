@@ -1,3 +1,4 @@
+package demolib;
 public class DemoLib {
 
   public native long   getToken(long seed);
