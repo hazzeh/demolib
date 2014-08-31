@@ -48,6 +48,6 @@ getMessageQuoted(int32_t token) {
   std::string msg = getMessage(token);
   str_remove(&msg, ",.");
   str_replace(&msg, " ", '_');
-  std::transform(msg.begin(), msg.end(), msg.begin(), ::tolower);
+  str_tolower(&msg);
   return msg.c_str();
 }

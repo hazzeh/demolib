@@ -9,6 +9,11 @@
 #include <cstring>
 
 void
+str_tolower(std::string* str) {
+  std::transform(str->begin(), str->end(), str->begin(), ::tolower);
+}
+
+void
 str_remove(std::string* str, std::string const& arg) {
   str->erase(
       std::remove_if(
