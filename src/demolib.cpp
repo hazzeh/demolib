@@ -7,8 +7,8 @@
 namespace {
 
 std::map<int32_t, std::string> msgs = {
-  { 10, "Do. Or do not. There is no try!"   },
-  { 20, "Judge me by my size, do you?"      },
+  { 10, "Do. Or do not. There is no try"    },
+  { 20, "Judge me by my size, do you!?"     },
   { 30, "Fear is the path to the dark side" },
   { 40, "Wars not make one great"           },
   { 99, "That is why you fail"              }
@@ -46,7 +46,7 @@ getMessage(int32_t token) {
 char const*
 getMessageQuoted(int32_t token) {
   std::string msg = getMessage(token);
-  str_remove(&msg, "!?,.");
+  str_remove(&msg, ",.");
   str_replace(&msg, " ", '_');
   std::transform(msg.begin(), msg.end(), msg.begin(), ::tolower);
   return msg.c_str();

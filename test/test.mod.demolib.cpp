@@ -27,23 +27,17 @@ TEST_F(Test, TokenValues) {
 }
 
 
-TEST_F(Test, Equal) {
-  EXPECT_STREQ("Do. Or do not. There is no try!"   , getMessage(10));
-  EXPECT_STREQ("Judge me by my size, do you?"      , getMessage(20));
-  EXPECT_STREQ("Fear is the path to the dark side" , getMessage(30));
-  EXPECT_STREQ("Wars not make one great"           , getMessage(40));
-}
-
-
 TEST_F(Test, NotEmpty) {
-  EXPECT_STRNE("" , getMessage(10));
-  EXPECT_STRNE("" , getMessage(20));
-  EXPECT_STRNE("" , getMessage(30));
-  EXPECT_STRNE("" , getMessage(40));
+  EXPECT_STRNE("", getMessage(10));
+  EXPECT_STRNE("", getMessage(20));
+  EXPECT_STRNE("", getMessage(30));
+  EXPECT_STRNE("", getMessage(40));
+  EXPECT_STRNE("", getMessage(50));
 }
 
 
 TEST_F(Test, DefaultReturn) {
+  EXPECT_STREQ("That is why you fail", getMessage(12));
   EXPECT_STREQ("That is why you fail", getMessage(21));
   EXPECT_STREQ("That is why you fail", getMessage(35));
   EXPECT_STREQ("That is why you fail", getMessage(50));
@@ -52,23 +46,12 @@ TEST_F(Test, DefaultReturn) {
 
 
 TEST_F(Test, Quoted) {
-  //EXPECT_STREQ("do_or_do_not_there_is_no_try", getMessageQuoted(10));
-  EXPECT_STREQ("judge_me_by_my_size_do_you" , getMessageQuoted(20));
-  EXPECT_STREQ("that_is_why_you_fail"       , getMessageQuoted(51));
-}
-
-
-TEST_F(Test, Repetition) {
-  auto msg1 = getMessage(10);
-  auto msg2 = getMessage(10);
-  auto msg3 = getMessage(99);
-  auto msg4 = getMessage(99);
-
-  EXPECT_EQ(msg1, msg2)
-      << "Consecutive for the same message should return equal messages";
-
-  EXPECT_EQ(msg3, msg4)
-      << "Consecutive for the same message should return equal messages";
+  std::string msg1 = getMessageQuoted(1);
+  EXPECT_EQ(std::string::npos, msg1.find(" "));
+  EXPECT_EQ(std::string::npos, msg1.find("."));
+  EXPECT_EQ(std::string::npos, msg1.find(","));
+  EXPECT_EQ(std::string::npos, msg1.find("!"));
+  EXPECT_EQ(std::string::npos, msg1.find("?"));
 }
 
 
