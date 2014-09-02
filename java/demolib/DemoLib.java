@@ -4,6 +4,7 @@ public class DemoLib {
   public native long   getToken(long seed);
   public native String getMessage(long token);
   public native String getMessageQuoted(long token);
+  public native String getVersion();
 
   public static void main(String[] args) {
     DemoLib dlib = new DemoLib();
