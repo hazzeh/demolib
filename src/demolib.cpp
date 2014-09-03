@@ -18,7 +18,9 @@ std::map<int32_t, std::string> msgs = {
 
 int32_t
 getToken(int32_t seed) {
-  if (seed < 10) {
+  if (seed < 0) {
+    return 0;
+  } else if (seed < 10) {
     return 10;
   } else if (seed < 20) {
     return 20;

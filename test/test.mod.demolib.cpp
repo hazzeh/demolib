@@ -16,7 +16,9 @@ class Test : public testing::Test {
 
 
 TEST_F(Test, TokenValues) {
-  EXPECT_EQ(10,getToken(-1))
+  EXPECT_EQ(0,getToken(-1))
+      << "Less than 0 seed should give token == 0";
+  EXPECT_EQ(10,getToken(5))
       << "Less than 10 seed should give token == 10";
   EXPECT_EQ(20,getToken(11))
       << "Less than 20 seed should give token == 20";
