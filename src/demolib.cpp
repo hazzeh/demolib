@@ -53,3 +53,9 @@ getMessageQuoted(int32_t token) {
   str_tolower(&msg);
   return msg.c_str();
 }
+
+char const*
+getVersion() {
+  std::string version = "1.1.0";
+  return version.c_str();
+}

@@ -32,3 +32,10 @@ Java_demolib_DemoLib_getMessageQuoted(JNIEnv* env,
   char const* str = getMessageQuoted(token);
   return (*env)->NewStringUTF(env, str);
 }
+
+JNIEXPORT jstring JNICALL
+Java_demolib_DemoLib_getVersion(JNIEnv* env,
+                              __attribute__((unused)) jobject obj) {
+  char const* str = getVersion();
+  return (*env)->NewStringUTF(env, str);
+}

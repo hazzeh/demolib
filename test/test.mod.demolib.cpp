@@ -56,6 +56,10 @@ TEST_F(Test, Quoted) {
   EXPECT_EQ(std::string::npos, msg1.find("?"));
 }
 
+TEST_F(Test, GetVersion) {
+  EXPECT_STREQ("1.1.0",getVersion());
+}
+
 
 } //  namespace end
 

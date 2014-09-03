@@ -31,6 +31,14 @@ JNIEXPORT jstring JNICALL Java_demolib_DemoLib_getMessage
 JNIEXPORT jstring JNICALL Java_demolib_DemoLib_getMessageQuoted
   (JNIEnv *, jobject, jlong);
 
+/*
+ * Class:     demolib_DemoLib
+ * Method:    getVersion
+ * Signature: ()Ljava/lang/String;
+ */
+JNIEXPORT jstring JNICALL Java_demolib_DemoLib_getVersion
+  (JNIEnv *, jobject);
+
 #ifdef __cplusplus
 }
 #endif
